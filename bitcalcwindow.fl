@@ -1,0 +1,1000 @@
+# data file for the Fltk User Interface Designer (fluid)
+version 1.0303 
+header_name {.hpp} 
+code_name {.cpp}
+decl {\#include <cstdio>} {public global
+} 
+
+decl {\#include <string>} {public global
+} 
+
+decl {\#include <vector>} {public global
+} 
+
+decl {\#include <cstdlib>} {public global
+} 
+
+decl {\#include <cstdint>} {public global
+} 
+
+decl {\#include <cstring>} {public global
+} 
+
+decl {\#include <cinttypes>} {public global
+} 
+
+class BitCalcWindow {open
+} {
+  Function {BitCalcWindow()} {} {
+    Fl_Window m_Window {open
+      xywh {789 202 855 600} type Double visible
+    } {
+      Fl_Menu_Bar {} {open
+        xywh {0 0 856 30} box THIN_UP_BOX
+      } {
+        Submenu {} {
+          label View open
+          xywh {0 0 70 20}
+        } {
+          MenuItem {} {
+            label item
+            xywh {0 0 36 20} divider
+          }
+          MenuItem {} {
+            label Exit
+            callback {{
+    exit(0);
+}}
+            xywh {10 10 36 20} shortcut 0x40071
+          }
+        }
+        Submenu {} {
+          label Config open
+          xywh {0 0 70 20}
+        } {
+          MenuItem {} {
+            label Origin
+            xywh {0 0 36 20} type Toggle
+          }
+        }
+      }
+      Fl_Button m_MainValue {
+        label 0
+        xywh {0 30 856 80} labelfont 4 labelsize 30
+      }
+      Fl_Button m_Value31 {
+        label 0
+        callback {{
+    SwitchValueButton(31);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {0 160 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value30 {
+        label 0
+        callback {{
+    SwitchValueButton(30);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {25 160 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value29 {
+        label 0
+        callback {{
+    SwitchValueButton(29);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {50 160 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value28 {
+        label 0
+        callback {{
+    SwitchValueButton(28);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {75 160 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value27 {
+        label 0
+        callback {{
+    SwitchValueButton(27);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {108 160 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value26 {
+        label 0
+        callback {{
+    SwitchValueButton(26);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {133 160 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value25 {
+        label 0
+        callback {{
+    SwitchValueButton(25);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {158 160 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value24 {
+        label 0
+        callback {{
+    SwitchValueButton(24);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {183 160 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value23 {
+        label 0
+        callback {{
+    SwitchValueButton(23);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {216 160 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value22 {
+        label 0
+        callback {{
+    SwitchValueButton(22);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {241 160 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value21 {
+        label 0
+        callback {{
+    SwitchValueButton(21);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {266 160 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value20 {
+        label 0
+        callback {{
+    SwitchValueButton(20);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {291 160 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value19 {
+        label 0
+        callback {{
+    SwitchValueButton(19);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {324 160 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value18 {
+        label 0
+        callback {{
+    SwitchValueButton(18);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {349 160 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value17 {
+        label 0
+        callback {{
+    SwitchValueButton(17);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {374 160 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value16 {
+        label 0
+        callback {{
+    SwitchValueButton(16);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {399 160 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value15 {
+        label 0
+        callback {{
+    SwitchValueButton(15);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {432 160 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value14 {
+        label 0
+        callback {{
+    SwitchValueButton(14);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {457 160 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value13 {
+        label 0
+        callback {{
+    SwitchValueButton(13);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {482 160 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value12 {
+        label 0
+        callback {{
+    SwitchValueButton(12);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {507 160 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value11 {
+        label 0
+        callback {{
+    SwitchValueButton(11);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {540 160 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value10 {
+        label 0
+        callback {{
+    SwitchValueButton(10);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {565 160 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value09 {
+        label 0
+        callback {{
+    SwitchValueButton(9);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {590 160 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value08 {
+        label 0
+        callback {{
+    SwitchValueButton(8);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {615 160 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value07 {
+        label 0
+        callback {{
+    SwitchValueButton(7);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {648 160 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value06 {
+        label 0
+        callback {{
+    SwitchValueButton(6);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {673 160 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value05 {
+        label 0
+        callback {{
+    SwitchValueButton(5);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {698 160 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value04 {
+        label 0
+        callback {{
+    SwitchValueButton(4);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {723 160 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value03 {
+        label 0
+        callback {{
+    SwitchValueButton(3);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {756 160 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value02 {
+        label 0
+        callback {{
+    SwitchValueButton(2);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {781 160 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value01 {
+        label 0
+        callback {{
+    SwitchValueButton(1);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {806 160 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value00 {
+        label 0
+        callback {{
+    SwitchValueButton(0);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {831 160 25 25} box THIN_UP_BOX
+      }
+      Fl_Button {} {
+        label 31
+        xywh {0 185 25 25} box NO_BOX
+      }
+      Fl_Button {} {
+        label 30
+        xywh {25 185 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 29
+        xywh {50 185 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 28
+        xywh {75 185 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 27
+        xywh {108 185 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 26
+        xywh {133 185 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 25
+        xywh {158 185 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 24
+        xywh {183 185 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 23
+        xywh {216 185 25 25} box NO_BOX
+      }
+      Fl_Button {} {
+        label 22
+        xywh {241 185 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 21
+        xywh {266 185 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 20
+        xywh {291 185 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 19
+        xywh {324 185 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 18
+        xywh {349 185 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 17
+        xywh {374 185 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 16
+        xywh {399 185 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 15
+        xywh {432 185 25 25} box NO_BOX
+      }
+      Fl_Button {} {
+        label 14
+        xywh {457 185 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 13
+        xywh {482 185 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 12
+        xywh {507 185 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 11
+        xywh {540 185 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 10
+        xywh {565 185 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 09
+        xywh {590 185 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 08
+        xywh {615 185 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 07
+        xywh {648 185 25 25} box NO_BOX
+      }
+      Fl_Button {} {
+        label 06
+        xywh {673 185 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 05
+        xywh {698 185 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 04
+        xywh {723 185 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 03
+        xywh {756 185 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 02
+        xywh {781 185 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 01
+        xywh {806 185 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 00
+        xywh {831 185 25 25} box NO_BOX deactivate
+      }
+      Fl_Button m_Value63 {
+        label 0
+        callback {{
+    SwitchValueButton(63);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {0 110 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value62 {
+        label 0
+        callback {{
+    SwitchValueButton(62);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {25 110 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value61 {
+        label 0
+        callback {{
+    SwitchValueButton(61);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {50 110 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value60 {
+        label 0
+        callback {{
+    SwitchValueButton(60);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {75 110 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value59 {
+        label 0
+        callback {{
+    SwitchValueButton(59);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {108 110 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value58 {
+        label 0
+        callback {{
+    SwitchValueButton(58);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {133 110 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value57 {
+        label 0
+        callback {{
+    SwitchValueButton(57);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {158 110 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value56 {
+        label 0
+        callback {{
+    SwitchValueButton(56);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {183 110 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value55 {
+        label 0
+        callback {{
+    SwitchValueButton(55);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {216 110 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value54 {
+        label 0
+        callback {{
+    SwitchValueButton(54);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {241 110 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value53 {
+        label 0
+        callback {{
+    SwitchValueButton(53);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {266 110 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value52 {
+        label 0
+        callback {{
+    SwitchValueButton(52);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {291 110 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value51 {
+        label 0
+        callback {{
+    SwitchValueButton(51);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {324 110 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value50 {
+        label 0
+        callback {{
+    SwitchValueButton(50);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {349 110 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value49 {
+        label 0
+        callback {{
+    SwitchValueButton(49);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {374 110 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value48 {
+        label 0
+        callback {{
+    SwitchValueButton(48);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {399 110 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value47 {
+        label 0
+        callback {{
+    SwitchValueButton(47);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {432 110 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value46 {
+        label 0
+        callback {{
+    SwitchValueButton(46);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {457 110 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value45 {
+        label 0
+        callback {{
+    SwitchValueButton(45);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {482 110 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value44 {
+        label 0
+        callback {{
+    SwitchValueButton(44);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {507 110 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value43 {
+        label 0
+        callback {{
+    SwitchValueButton(43);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {540 110 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value42 {
+        label 0
+        callback {{
+    SwitchValueButton(42);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {565 110 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value41 {
+        label 0
+        callback {{
+    SwitchValueButton(41);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {590 110 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value40 {
+        label 0
+        callback {{
+    SwitchValueButton(40);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {615 110 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value39 {
+        label 0
+        callback {{
+    SwitchValueButton(39);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {648 110 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value38 {
+        label 0
+        callback {{
+    SwitchValueButton(38);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {673 110 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value37 {
+        label 0
+        callback {{
+    SwitchValueButton(37);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {698 110 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value36 {
+        label 0
+        callback {{
+    SwitchValueButton(36);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {723 110 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value35 {
+        label 0
+        callback {{
+    SwitchValueButton(35);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {756 110 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value34 {
+        label 0
+        callback {{
+    SwitchValueButton(34);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {781 110 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value33 {
+        label 0
+        callback {{
+    SwitchValueButton(33);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {806 110 25 25} box THIN_UP_BOX
+      }
+      Fl_Button m_Value32 {
+        label 0
+        callback {{
+    SwitchValueButton(32);
+    SetMainValue(GetMainValue(), GetValueBase());
+}}
+        xywh {831 110 25 25} box THIN_UP_BOX
+      }
+      Fl_Button {} {
+        label 63
+        xywh {0 135 25 25} box NO_BOX
+      }
+      Fl_Button {} {
+        label 62
+        xywh {25 135 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 61
+        xywh {50 135 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 60
+        xywh {75 135 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 59
+        xywh {108 135 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 58
+        xywh {133 135 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 57
+        xywh {158 135 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 56
+        xywh {183 135 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 55
+        xywh {216 135 25 25} box NO_BOX
+      }
+      Fl_Button {} {
+        label 54
+        xywh {241 135 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 53
+        xywh {266 135 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 52
+        xywh {291 135 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 51
+        xywh {324 135 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 50
+        xywh {349 135 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 49
+        xywh {374 135 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 48
+        xywh {399 135 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 47
+        xywh {432 135 25 25} box NO_BOX
+      }
+      Fl_Button {} {
+        label 46
+        xywh {457 135 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 45
+        xywh {482 135 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 44
+        xywh {507 135 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 43
+        xywh {540 135 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 42
+        xywh {565 135 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 41
+        xywh {590 135 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 40
+        xywh {615 135 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 39
+        xywh {648 135 25 25} box NO_BOX
+      }
+      Fl_Button {} {
+        label 38
+        xywh {673 135 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 37
+        xywh {698 135 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 36
+        xywh {723 135 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 35
+        xywh {756 135 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 34
+        xywh {781 135 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 33
+        xywh {806 135 25 25} box NO_BOX deactivate
+      }
+      Fl_Button {} {
+        label 32
+        xywh {831 135 25 25} box NO_BOX deactivate
+      }
+    }
+  }
+  Function {ShowAll()} {return_type void
+  } {
+    code {{
+    m_Window->show();
+}} {}
+  }
+  Function {GetMainValue()} {return_type uint64_t
+  } {
+    code {{
+    uint64_t nResult = 0;
+    for(int nIndex = 0; nIndex < 64; ++nIndex){
+        if(std::strcmp(GetValueButton(nIndex)->label(), "0")){
+            nResult |= ((uint64_t)(1) << nIndex);
+        }
+    }
+    return nResult;
+}} {}
+  }
+  Function {SetMainValue(uint64_t nValue, int nBase)} {return_type void
+  } {
+    code {{
+    char szValue[1024];
+    switch(nBase){
+        case 2:
+            {
+                break;
+            }
+        case 8:
+            {
+                std::sprintf(szValue, "%" PRIo64, nValue);
+                break;
+            }
+        case 16:
+            {
+                std::sprintf(szValue, "%" PRIX64, nValue);
+                FormatValue(szValue, 4, ' ');
+                break;
+            }
+        default:
+            {
+                std::sprintf(szValue, "ERROR");
+                break;
+            }
+    }
+    m_MainValue->copy_label(szValue);
+}} {}
+  }
+  Function {GetValueButton(int nIndex)} {return_type {Fl_Widget *}
+  } {
+    code {{
+    // return the button widget according to the index
+    switch(nIndex){
+        case  0: return m_Value00;
+        case  1: return m_Value01;
+        case  2: return m_Value02;
+        case  3: return m_Value03;
+        case  4: return m_Value04;
+        case  5: return m_Value05;
+        case  6: return m_Value06;
+        case  7: return m_Value07;
+        case  8: return m_Value08;
+        case  9: return m_Value09;
+        case 10: return m_Value10;
+        case 11: return m_Value11;
+        case 12: return m_Value12;
+        case 13: return m_Value13;
+        case 14: return m_Value14;
+        case 15: return m_Value15;
+        case 16: return m_Value16;
+        case 17: return m_Value17;
+        case 18: return m_Value18;
+        case 19: return m_Value19;
+        case 20: return m_Value20;
+        case 21: return m_Value21;
+        case 22: return m_Value22;
+        case 23: return m_Value23;
+        case 24: return m_Value24;
+        case 25: return m_Value25;
+        case 26: return m_Value26;
+        case 27: return m_Value27;
+        case 28: return m_Value28;
+        case 29: return m_Value29;
+        case 30: return m_Value30;
+        case 31: return m_Value31;
+        case 32: return m_Value32;
+        case 33: return m_Value33;
+        case 34: return m_Value34;
+        case 35: return m_Value35;
+        case 36: return m_Value36;
+        case 37: return m_Value37;
+        case 38: return m_Value38;
+        case 39: return m_Value39;
+        case 40: return m_Value40;
+        case 41: return m_Value41;
+        case 42: return m_Value42;
+        case 43: return m_Value43;
+        case 44: return m_Value44;
+        case 45: return m_Value45;
+        case 46: return m_Value46;
+        case 47: return m_Value47;
+        case 48: return m_Value48;
+        case 49: return m_Value49;
+        case 50: return m_Value50;
+        case 51: return m_Value51;
+        case 52: return m_Value52;
+        case 53: return m_Value53;
+        case 54: return m_Value54;
+        case 55: return m_Value55;
+        case 56: return m_Value56;
+        case 57: return m_Value57;
+        case 58: return m_Value58;
+        case 59: return m_Value59;
+        case 60: return m_Value60;
+        case 61: return m_Value61;
+        case 62: return m_Value62;
+        case 63: return m_Value63;
+        default: return nullptr;
+    }
+}} {}
+  }
+  Function {SwitchValueButton(int nIndex)} {return_type void
+  } {
+    code {{
+    // assign all value button to a static buffer
+    if(auto pButton = GetValueButton(nIndex)){
+        if(std::strcmp(pButton->label(), "0")){
+            pButton->copy_label("0");
+        }else{
+            pButton->copy_label("1");
+        }
+    }
+}} {}
+  }
+  Function {GetValueBase()} {return_type int
+  } {
+    code {{
+    return 16;
+}} {}
+  }
+  Function {FormatValue(char *szValue, size_t nSplitLen, char nSplitChar)} {open return_type {const char *}
+  } {
+    code {{
+    if(szValue && nSplitLen){
+        size_t nCurrIndex = 0;
+        size_t nValueLen  = std::strlen(szValue);
+
+        std::string szFormatValue;
+        if(auto nFirstChunkLen = nValueLen % nSplitLen){
+            szFormatValue += std::string(szValue, nFirstChunkLen);
+            szFormatValue += nSplitChar;
+            nCurrIndex    += nFirstChunkLen;
+        }
+
+        while(nCurrIndex < nValueLen){
+            szFormatValue += std::string(szValue + nCurrIndex, nSplitLen);
+            szFormatValue += nSplitChar;
+            nCurrIndex    += nSplitLen;
+        }
+
+        std::strcpy(szValue, szFormatValue.c_str());
+        return szValue;
+    }
+    return nullptr;
+}} {}
+  }
+} 
