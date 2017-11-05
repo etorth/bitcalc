@@ -25,11 +25,13 @@ decl {\#include <cinttypes>} {public global
 
 class BitCalcWindow {open
 } {
-  Function {BitCalcWindow()} {} {
-    Fl_Window m_Window {open
-      xywh {789 202 855 600} type Double visible
+  Function {BitCalcWindow()} {open
+  } {
+    Fl_Window m_Window {
+      label {bitcalc-v0.01} open
+      xywh {791 204 855 600} type Double visible
     } {
-      Fl_Menu_Bar {} {open
+      Fl_Menu_Bar {} {
         xywh {0 0 856 30} box THIN_UP_BOX
       } {
         Submenu {} {
@@ -227,7 +229,7 @@ class BitCalcWindow {open
         callback {{
     SwitchValueButton(11);
     SetMainValue(GetMainValue(), GetValueBase());
-}}
+}} selected
         xywh {540 160 25 25} box THIN_UP_BOX
       }
       Fl_Button m_Value10 {
@@ -829,6 +831,170 @@ class BitCalcWindow {open
       Fl_Button {} {
         label 32
         xywh {831 135 25 25} box NO_BOX deactivate
+      }
+      Fl_Group {} {open
+        xywh {5 230 75 115}
+      } {
+        Fl_Round_Button {} {
+          label HEX
+          xywh {5 230 75 25} type Radio down_box ROUND_DOWN_BOX labelfont 4
+        }
+        Fl_Round_Button {} {
+          label DEC
+          xywh {5 260 75 25} type Radio down_box ROUND_DOWN_BOX value 1 labelfont 4
+        }
+        Fl_Round_Button {} {
+          label OCT
+          xywh {5 290 75 25} type Radio down_box ROUND_DOWN_BOX labelfont 4
+        }
+        Fl_Round_Button {} {
+          label BIN
+          xywh {5 320 75 25} type Radio down_box ROUND_DOWN_BOX labelfont 4
+        }
+      }
+      Fl_Button {} {
+        label A
+        xywh {305 245 50 40}
+      }
+      Fl_Button {} {
+        xywh {355 245 50 40}
+      }
+      Fl_Button {} {
+        xywh {405 245 50 40}
+      }
+      Fl_Button {} {
+        xywh {455 245 50 40}
+      }
+      Fl_Button {} {
+        label B
+        xywh {305 285 50 40}
+      }
+      Fl_Button {} {
+        xywh {355 285 50 40}
+      }
+      Fl_Button {} {
+        xywh {405 285 50 40}
+      }
+      Fl_Button {} {
+        xywh {455 285 50 40}
+      }
+      Fl_Button {} {
+        label C
+        xywh {305 325 50 40}
+      }
+      Fl_Button {} {
+        label 0
+        xywh {355 445 150 40}
+      }
+      Fl_Button {} {
+        label D
+        xywh {305 365 50 40}
+      }
+      Fl_Button {} {
+        label 7
+        xywh {355 325 50 40}
+      }
+      Fl_Button {} {
+        label 8
+        xywh {405 325 50 40}
+      }
+      Fl_Button {} {
+        label 9
+        xywh {455 325 50 40}
+      }
+      Fl_Button {} {
+        label E
+        xywh {305 405 50 40}
+      }
+      Fl_Button {} {
+        label 4
+        xywh {355 365 50 40}
+      }
+      Fl_Button {} {
+        label 5
+        xywh {405 365 50 40}
+      }
+      Fl_Button {} {
+        label 6
+        xywh {455 365 50 40}
+      }
+      Fl_Button {} {
+        label F
+        xywh {305 445 50 40}
+      }
+      Fl_Button {} {
+        label 1
+        xywh {355 405 50 40}
+      }
+      Fl_Button {} {
+        label 2
+        xywh {405 405 50 40}
+      }
+      Fl_Button {} {
+        label 3
+        xywh {455 405 50 40}
+      }
+      Fl_Button {} {
+        label AND
+        xywh {565 245 50 40}
+      }
+      Fl_Button {} {
+        label {RSH(>>)}
+        xywh {615 365 150 40}
+      }
+      Fl_Button {} {
+        label OR
+        xywh {565 285 50 40}
+      }
+      Fl_Button {} {
+        xywh {615 245 50 40}
+      }
+      Fl_Button {} {
+        label 8
+        xywh {665 245 50 40}
+      }
+      Fl_Button {} {
+        label 9
+        xywh {715 245 50 40}
+      }
+      Fl_Button {} {
+        label NOT
+        xywh {565 325 50 40}
+      }
+      Fl_Button {} {
+        xywh {615 285 50 40}
+      }
+      Fl_Button {} {
+        label 5
+        xywh {665 285 50 40}
+      }
+      Fl_Button {} {
+        label 6
+        xywh {715 285 50 40}
+      }
+      Fl_Button {} {
+        label XOR
+        xywh {565 365 50 40}
+      }
+      Fl_Button {} {
+        label 1
+        xywh {615 325 50 40}
+      }
+      Fl_Button {} {
+        label 2
+        xywh {665 325 50 40}
+      }
+      Fl_Button {} {
+        label 3
+        xywh {715 325 50 40}
+      }
+      Fl_Button {} {
+        label {LSH(<<)}
+        xywh {615 405 150 40}
+      }
+      Fl_Button {} {
+        label NOR
+        xywh {565 405 50 40}
       }
     }
   }
