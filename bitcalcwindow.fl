@@ -28,7 +28,7 @@ class BitCalcWindow {open
   Function {BitCalcWindow()} {open
   } {
     Fl_Window m_Window {
-      label {bitcalc-v0.01} open
+      label {bitcalc-v0.01} open selected
       xywh {791 204 855 600} type Double visible
     } {
       Fl_Menu_Bar {} {
@@ -62,7 +62,7 @@ class BitCalcWindow {open
       }
       Fl_Button m_MainValue {
         label 0
-        xywh {0 30 856 80} labelfont 4 labelsize 30
+        xywh {0 30 856 80} labelfont 4 labelsize 20
       }
       Fl_Button m_Value31 {
         label 0
@@ -229,7 +229,7 @@ class BitCalcWindow {open
         callback {{
     SwitchValueButton(11);
     SetMainValue(GetMainValue(), GetValueBase());
-}} selected
+}}
         xywh {540 160 25 25} box THIN_UP_BOX
       }
       Fl_Button m_Value10 {
@@ -835,19 +835,19 @@ class BitCalcWindow {open
       Fl_Group {} {open
         xywh {5 230 75 115}
       } {
-        Fl_Round_Button {} {
+        Fl_Round_Button m_ButtonHEX {
           label HEX
           xywh {5 230 75 25} type Radio down_box ROUND_DOWN_BOX labelfont 4
         }
-        Fl_Round_Button {} {
+        Fl_Round_Button m_ButtonDEC {
           label DEC
           xywh {5 260 75 25} type Radio down_box ROUND_DOWN_BOX value 1 labelfont 4
         }
-        Fl_Round_Button {} {
+        Fl_Round_Button m_ButtonOCT {
           label OCT
           xywh {5 290 75 25} type Radio down_box ROUND_DOWN_BOX labelfont 4
         }
-        Fl_Round_Button {} {
+        Fl_Round_Button m_ButtonBIN {
           label BIN
           xywh {5 320 75 25} type Radio down_box ROUND_DOWN_BOX labelfont 4
         }
@@ -1023,11 +1023,30 @@ class BitCalcWindow {open
     switch(nBase){
         case 2:
             {
+                bool bHasOne = false;
+                std::string szBinValue;
+                for(uint64_t nMask = 0X8000000000000000; nMask; nMask >>= 1){
+                    auto nCurrBit = nMask & nValue;
+                    if(nCurrBit){
+                        bHasOne = true;
+                        szBinValue += "1";
+                    }else{
+                        if(bHasOne){
+                            szBinValue += "0";
+                        }
+                    }
+                }
+                std::strcpy(szValue, szBinValue.c_str());
                 break;
             }
         case 8:
             {
                 std::sprintf(szValue, "%" PRIo64, nValue);
+                break;
+            }
+        case 10:
+            {
+                std::sprintf(szValue, "%" PRIu64, nValue);
                 break;
             }
         case 16:
@@ -1131,13 +1150,21 @@ class BitCalcWindow {open
     }
 }} {}
   }
-  Function {GetValueBase()} {return_type int
+  Function {GetValueBase()} {open return_type int
   } {
     code {{
+    if(m_ButtonHEX->value()){ return 16; }
+    if(m_ButtonDEC->value()){ return 10; }
+    if(m_ButtonOCT->value()){ return  8; }
+    if(m_ButtonBIN->value()){ return  2; }
+    
+    // can't happen here
+    // should I use fl_alert()?
     return 16;
+    
 }} {}
   }
-  Function {FormatValue(char *szValue, size_t nSplitLen, char nSplitChar)} {open return_type {const char *}
+  Function {FormatValue(char *szValue, size_t nSplitLen, char nSplitChar)} {return_type {const char *}
   } {
     code {{
     if(szValue && nSplitLen){

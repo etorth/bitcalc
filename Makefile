@@ -2,7 +2,7 @@
 #
 #      Filename: Makefile
 #       Created: 11/03/2017 20:51:28
-# Last Modified: 11/03/2017 22:55:25
+# Last Modified: 11/05/2017 22:05:01
 #
 #   Description: 
 #
@@ -23,8 +23,8 @@ FLTKCONF := fltk-config
 SRC_FL := $(wildcard *.fl )
 SRC_XX := $(wildcard *.cpp)
 
-CXXFLAGS := $(shell $(FLTKCONF) --cxxflags) -std=c++11 -g3 -O0 -Wall
-LDFLAGS  := $(shell $(FLTKCONF) --ldflags)
+CXXFLAGS := $(shell $(FLTKCONF) --cxxflags) -std=c++11 -g3 -O0 -Wall -fsanitize=address
+LDFLAGS  := $(shell $(FLTKCONF) --ldflags) -fsanitize=address
 
 OBJS := $(addsuffix .o, $(basename $(SRC_FL) $(SRC_XX)))
 
