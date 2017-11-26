@@ -20,15 +20,27 @@ decl {\#include <cstdint>} {public global
 decl {\#include <cstring>} {public global
 } 
 
+decl {\#include <FL/Fl.H>} {public global
+} 
+
+decl {\#include <FL/fl_ask.H>} {public global
+} 
+
 decl {\#include <cinttypes>} {public global
 } 
 
 class BitCalcWindow {open
 } {
+  decl {std::string m_CopyFileName;} {private local
+  }
   Function {BitCalcWindow()} {open
   } {
+    code {// init all non-widget variables
+{
+    m_CopyFileName = ".bitcalc.txt";
+}} {}
     Fl_Window m_Window {
-      label {bitcalc-v0.01} open selected
+      label {bitcalc-v0.01}
       xywh {791 204 855 600} type Double visible
     } {
       Fl_Menu_Bar {} {
@@ -62,6 +74,47 @@ class BitCalcWindow {open
       }
       Fl_Button m_MainValue {
         label 0
+        callback {{
+    std::string szCopyFile;
+    if(auto pHome = std::getenv("HOME")){
+        szCopyFile += pHome;
+        szCopyFile += "/";
+        szCopyFile += m_CopyFileName;
+    }else{
+        fl_alert("Can't save current value to tmp file");
+        return;
+    }
+    
+    if(auto fp = std::fopen(szCopyFile.c_str(), "wb")){
+        switch(Fl::event_button()){
+            case FL_LEFT_MOUSE:
+                {
+                    uint64_t nMainValue = GetMainValue();
+                    std::fwrite(&nMainValue, 8, 1, fp);
+                    std::fclose(fp);
+
+                    return;
+                }
+            case FL_RIGHT_MOUSE:
+                {
+                    uint64_t nMainValue = 0;
+                    std::fread(&nMainValue, 8, 1, fp);
+                    std::fclose(fp);
+                    
+                    SetMainValue(nMainValue, GetValueBase());
+                    return;
+                }
+            default:
+                {
+                    std::fclose(fp);
+                    return;
+                }
+        }
+    }else{
+        fl_alert("Can't access tmp file: %s", szCopyFile.c_str());
+        return;
+    }
+}}
         xywh {0 30 856 80} labelfont 4 labelsize 20
       }
       Fl_Button m_Value31 {
@@ -1150,7 +1203,7 @@ class BitCalcWindow {open
     }
 }} {}
   }
-  Function {GetValueBase()} {open return_type int
+  Function {GetValueBase()} {return_type int
   } {
     code {{
     if(m_ButtonHEX->value()){ return 16; }
@@ -1164,7 +1217,7 @@ class BitCalcWindow {open
     
 }} {}
   }
-  Function {FormatValue(char *szValue, size_t nSplitLen, char nSplitChar)} {return_type {const char *}
+  Function {FormatValue(char *szValue, size_t nSplitLen, char nSplitChar)} {selected return_type {const char *}
   } {
     code {{
     if(szValue && nSplitLen){
