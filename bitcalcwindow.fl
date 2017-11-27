@@ -40,35 +40,35 @@ class BitCalcWindow {open
     m_CopyFileName = ".bitcalc.txt";
 }} {}
     Fl_Window m_Window {
-      label {bitcalc-v0.01}
-      xywh {791 204 855 600} type Double visible
+      label {bitcalc-v0.01} open selected
+      xywh {576 134 855 600} type Double visible
     } {
-      Fl_Menu_Bar {} {
-        xywh {0 0 856 30} box THIN_UP_BOX
+      Fl_Menu_Bar {} {open
+        xywh {0 0 856 30} box THIN_UP_BOX labelfont 4
       } {
         Submenu {} {
           label View open
-          xywh {0 0 70 20}
+          xywh {0 0 70 20} labelfont 4
         } {
           MenuItem {} {
             label item
-            xywh {0 0 36 20} divider
+            xywh {0 0 36 20} labelfont 4 divider
           }
           MenuItem {} {
             label Exit
             callback {{
     exit(0);
 }}
-            xywh {10 10 36 20} shortcut 0x40071
+            xywh {10 10 36 20} shortcut 0x40071 labelfont 4
           }
         }
         Submenu {} {
           label Config open
-          xywh {0 0 70 20}
+          xywh {0 0 70 20} labelfont 4
         } {
           MenuItem {} {
             label Origin
-            xywh {0 0 36 20} type Toggle
+            xywh {0 0 36 20} type Toggle labelfont 4
           }
         }
       }
@@ -84,35 +84,35 @@ class BitCalcWindow {open
         fl_alert("Can't save current value to tmp file");
         return;
     }
-    
-    if(auto fp = std::fopen(szCopyFile.c_str(), "wb")){
-        switch(Fl::event_button()){
-            case FL_LEFT_MOUSE:
-                {
+
+    switch(Fl::event_button()){
+        case FL_LEFT_MOUSE:
+            {
+                if(auto fp = std::fopen(szCopyFile.c_str(), "wb")){
                     uint64_t nMainValue = GetMainValue();
                     std::fwrite(&nMainValue, 8, 1, fp);
                     std::fclose(fp);
-
-                    return;
+                }else{
+                    fl_alert("Can't access tmp file: %s", szCopyFile.c_str());
                 }
-            case FL_RIGHT_MOUSE:
-                {
+                return;
+            }
+        case FL_RIGHT_MOUSE:
+            {
+                if(auto fp = std::fopen(szCopyFile.c_str(), "rb")){
                     uint64_t nMainValue = 0;
                     std::fread(&nMainValue, 8, 1, fp);
                     std::fclose(fp);
-                    
                     SetMainValue(nMainValue, GetValueBase());
-                    return;
+                }else{
+                    fl_alert("Can't access tmp file: %s", szCopyFile.c_str());
                 }
-            default:
-                {
-                    std::fclose(fp);
-                    return;
-                }
-        }
-    }else{
-        fl_alert("Can't access tmp file: %s", szCopyFile.c_str());
-        return;
+                return;
+            }
+        default:
+            {
+                return;
+            }
     }
 }}
         xywh {0 30 856 80} labelfont 4 labelsize 20
@@ -890,18 +890,30 @@ class BitCalcWindow {open
       } {
         Fl_Round_Button m_ButtonHEX {
           label HEX
+          callback {{
+    SetMainValue(GetMainValue(), 16);
+}}
           xywh {5 230 75 25} type Radio down_box ROUND_DOWN_BOX labelfont 4
         }
         Fl_Round_Button m_ButtonDEC {
           label DEC
+          callback {{
+    SetMainValue(GetMainValue(), 10);
+}}
           xywh {5 260 75 25} type Radio down_box ROUND_DOWN_BOX value 1 labelfont 4
         }
         Fl_Round_Button m_ButtonOCT {
           label OCT
+          callback {{
+    SetMainValue(GetMainValue(), 8);
+}}
           xywh {5 290 75 25} type Radio down_box ROUND_DOWN_BOX labelfont 4
         }
         Fl_Round_Button m_ButtonBIN {
           label BIN
+          callback {{
+    SetMainValue(GetMainValue(), 2);
+}}
           xywh {5 320 75 25} type Radio down_box ROUND_DOWN_BOX labelfont 4
         }
       }
@@ -1217,7 +1229,7 @@ class BitCalcWindow {open
     
 }} {}
   }
-  Function {FormatValue(char *szValue, size_t nSplitLen, char nSplitChar)} {selected return_type {const char *}
+  Function {FormatValue(char *szValue, size_t nSplitLen, char nSplitChar)} {return_type {const char *}
   } {
     code {{
     if(szValue && nSplitLen){
